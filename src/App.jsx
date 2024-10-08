@@ -19,6 +19,7 @@ const App = () => {
         return (
           <div>
             <p>test</p>
+            <p>test2</p>
             <p>{item.brand}</p>
             <p>{item.price}</p>
             <img src={item.picture} alt="watch picture" className="w-60" />
