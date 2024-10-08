@@ -1,31 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { supabase } from "./createClient";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import WatchDetails from "./pages/WatchDetails";
 const App = () => {
-  const [watchs, setWatchs] = useState([]);
-
-  useEffect(() => {
-    fetchWatchs();
-  }, []);
-
-  async function fetchWatchs() {
-    const { data } = await supabase.from("watchs").select("*");
-    setWatchs(data);
-    console.log(data);
-  }
   return (
-    <div>
-      {watchs.map((item) => {
-        return (
-          <div>
-            <p>test</p>
-            <p>{item.brand}</p>
-            <p>{item.price}</p>
-            <img src={item.picture} alt="watch picture" className="w-60" />
-          </div>
-        );
-      })}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/watch-detail" element={<WatchDetails />} />
+      </Routes>
+    </Router>
   );
 };
 
