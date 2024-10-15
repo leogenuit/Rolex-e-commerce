@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "./../supabase";
 import { useParams } from "react-router-dom";
 import Button from "../components/Button";
-const WatchDetails = () => {
+const WatchDetails = ({ addToCart }) => {
   const { id } = useParams();
   const [watch, setWatch] = useState(null);
 

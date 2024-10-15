@@ -1,7 +1,7 @@
 import React from "react";
 
 const Button = ({ text, color }) => {
-  return <div className={color}>{text}</div>;
+  return <button className={color}>{text}</button>;
 };
 
 export default Button;
